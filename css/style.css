@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background: #f9f7f3; */
+    background: #002336;
+    color: #181818;
+}
+
+img {
+    width: 100%;
+}
+
+.bg-light {
+    background: #f9f7f3;
+}
+
+.container {
+    max-width: 980px;
+    padding: 4rem 1rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* header */
+.showcase::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background: url('../img/showcase.jpg') no-repeat center center/cover;
+    display: block;
+    filter: blur(10px);
+    transition: all 1s;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+}
+
+.showcase:hover .content {
+    filter: blur(2px);
+}
+
+.content {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.content .title {
+    font-size: 2.5rem;
+}
+
+.content .text {
+    margin-top: 0.7rem;
+    font-size: 1.2rem;
+}
+
+/* guide */
+.grid-cards-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.grid-cards-3 div {
+    background: #f9f7f3;
+}
+
+.grid-cards-3 h3 {
+    margin: 0.5rem 0;
+}
+
+.grid-cards-3 p {
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.6;
+}
+
+/* about */
+.grid-cards-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.grid-cards-2 p {
+    padding: 1rem 0;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 1.5rem 0;
+}
+
+footer p {
+    color: #f9f7f3;
+    text-align: center;
+}
+
+@media(max-width: 750px) {
+
+    .grid-cards-3,
+    .grid-cards-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase::after {
+        height: 50vh;
+    }
+
+    .content {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        text-align: center;
+        overflow: hidden;
+        z-index: 1;
+        padding: 0 2rem;
+    }
+}
